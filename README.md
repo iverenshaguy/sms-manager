@@ -21,7 +21,7 @@ You can find the project at [https://www.pivotaltracker.com/n/projects/2355397](
 
 ### Deployment
 
-API is deployed at [https://sms-manager-sivy.herokuapp.com/api/v1](https://sms-manager-sivy.herokuapp.com/api/v1)
+API is deployed at [https://sms-manager-sivy.herokuapp.com/v1](https://sms-manager-sivy.herokuapp.com/v1)
 
 ## Technologies
 
