@@ -4,7 +4,7 @@ import Vision from '@hapi/vision';
 import HapiSwagger from 'hapi-swagger';
 
 import Package from '../../package.json';
-import validationFailAction from '../utils/validationFailACtion';
+import validationFailAction from '../utils/validationFailAction';
 
 getEnv();
 
@@ -49,8 +49,7 @@ export default {
               in: 'header'
             }
           },
-          security: [{ jwt: [] }],
-          documentationPath: '/api/documentation'
+          security: [{ jwt: [] }]
         }
       },
       {
