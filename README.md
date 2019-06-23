@@ -91,7 +91,7 @@ You can run `yarn dev` in development to use [Nodemon](https://nodemon.io/)
 
 * After installing as shown above
 * Navigate to [localhost:[PORT]](http://localhost:[PORT]/) in [Postman](https://getpostman.com/) to access the application
-* Use the [API Documentation](https://sms-manager-sivy.herokuapp.com/api/documentation) to access the endpoints available
+* Use the [API Documentation](https://sms-manager-sivy.herokuapp.com/documentation) to access the endpoints available
 
 #### Testing with Coverage Data
 

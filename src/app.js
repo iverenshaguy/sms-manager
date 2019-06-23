@@ -1,4 +1,3 @@
-import '@babel/register';
 import getServer from './server';
 
 (async () => {
