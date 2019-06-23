@@ -1,0 +1,63 @@
+{
+  "name": "sms-manager",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "engines": {
+    "node": "10.7.0"
+  },
+  "dependencies": {
+    "@hapi/boom": "^7.4.2",
+    "@hapi/glue": "^6.1.0",
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/inert": "^5.2.0",
+    "@hapi/joi": "^15.0.3",
+    "@hapi/vision": "^5.5.2",
+    "bcrypt": "^3.0.6",
+    "dotenv": "^8.0.0",
+    "hapi-auth-jwt2": "^8.6.1",
+    "hapi-swagger": "^10.0.2",
+    "joi-phone-number": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.8.9",
+    "sequelize-cli": "^5.5.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "@hapi/code": "^5.3.1",
+    "@hapi/lab": "^19.1.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^2.4.1",
+    "nodemon": "^1.19.1",
+    "sync-dotenv": "^2.2.0"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "test": "NODE_ENV=test yarn migrate && lab -v ./**/*.test.js -l",
+    "dev": "nodemon --exec babel-node -- ./src/app.js",
+    "start": "node ./dist/app.js",
+    "env": "sync-dotenv",
+    "sequelize-cli:es6": "./node_modules/.bin/babel-node ./node_modules/.bin/sequelize $*",
+    "migrate": "yarn sequelize-cli:es6 db:migrate",
+    "migrate:undo": "yarn sequelize-cli:es6 db:migrate:undo:all",
+    "seed": "yarn sequelize-cli:es6 db:seed:all",
+    "seed:undo": "yarn sequelize-cli:es6 db:seed:undo:all",
+    "db:prepare": "yarn migrate && yarn seed"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run env"
+    }
+  }
+}
